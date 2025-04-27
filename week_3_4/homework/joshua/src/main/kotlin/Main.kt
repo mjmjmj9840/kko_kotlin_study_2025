@@ -1,11 +1,10 @@
-import kotlinx.coroutines.*
 
-fun main() = runBlocking {
-    launch { doWorld() }
-    println("hello")
-}
+fun main(args: Array<String>) {
+    if (args.size == 0) {
+        return
+    }
 
-suspend fun doWorld() {
-    delay(1000L)
-    println("world")
+    when (args[0]) {
+        "ex3" -> mainEx3()
+    }
 }
