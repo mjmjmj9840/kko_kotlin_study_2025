@@ -6,5 +6,6 @@ fun main(args: Array<String>) {
 
     when (args[0]) {
         "ex3" -> mainEx3()
+        "ex41" -> mainEx41()
     }
 }
