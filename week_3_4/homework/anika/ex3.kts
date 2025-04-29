@@ -1,4 +1,4 @@
-#!/usr/bin/env kotlinc -script
+#!/usr/bin/env kscript
 
 val products = listOf(
     mapOf("name" to "Keyboard", "price" to 50000),
