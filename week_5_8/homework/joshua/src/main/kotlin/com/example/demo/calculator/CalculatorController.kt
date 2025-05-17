@@ -17,4 +17,9 @@ class CalculatorController {
     fun add(@RequestParam a: Int, @RequestParam b: Int) : Int {
         return calculatorService.add(a, b)
     }
+
+    @GetMapping("/divide")
+    fun divide(@RequestParam a: Int, @RequestParam b: Int): Int {
+        return calculatorService.divide(a, b)
+    }
 }

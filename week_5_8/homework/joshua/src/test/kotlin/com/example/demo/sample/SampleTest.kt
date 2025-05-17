@@ -1,6 +1,8 @@
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test
+package com.example.demo.sample
+
+import kotlin.test.Test
+import kotlin.test.assertEquals
+
 
 class SampleTest {
 
@@ -12,11 +14,11 @@ class SampleTest {
     @Test
     fun `문법 공부중`() {
         val f: () -> Int = { 1 + 3 }
-        assertThat(f()).isEqualTo(4)
+        assertEquals(4, f())
 
         val f2: String.() -> Int = { this.length + 3}
-        assertThat(f2("test")).isEqualTo(7)
-        assertThat("test".f2()).isEqualTo(7)
+        assertEquals(7, f2("test"))
+        assertEquals(7,  "test".f2())
     }
 
 
