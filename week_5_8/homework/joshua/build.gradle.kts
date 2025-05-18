@@ -22,9 +22,17 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+	// Spring WebFlux가 제공하는 WebClient 포함
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	// (선택) Kotlin 코루틴 확장 사용 시
+	implementation("org.springframework.boot:spring-boot-starter-reactor-netty")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testImplementation("io.mockk:mockk:1.13.10")
+
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
