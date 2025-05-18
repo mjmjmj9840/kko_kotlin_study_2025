@@ -1,10 +1,10 @@
-package kr.study.elan.study56
+package kr.study.elan.kstudy
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class Study56ApplicationTests {
+class KStudyApplicationTests {
 
 	@Test
 	fun contextLoads() {

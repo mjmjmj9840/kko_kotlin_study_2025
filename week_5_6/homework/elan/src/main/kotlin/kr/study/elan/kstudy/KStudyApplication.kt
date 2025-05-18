@@ -1,11 +1,11 @@
-package kr.study.elan.study56
+package kr.study.elan.kstudy
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class Study56Application
+class KStudyApplication
 
 fun main(args: Array<String>) {
-	runApplication<Study56Application>(*args)
+	runApplication<KStudyApplication>(*args)
 }
