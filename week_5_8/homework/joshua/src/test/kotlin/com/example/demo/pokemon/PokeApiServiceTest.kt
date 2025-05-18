@@ -2,10 +2,12 @@ package com.example.demo.pokemon
 
 import com.example.demo.pokemon.model.MyPokemon
 import com.example.demo.pokemon.model.Pokemon
+import com.example.demo.pokemon.model.PokemonNotFoundException
 import kotlinx.coroutines.runBlocking
 import reactor.core.publisher.Mono
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertNotNull
 import kotlin.time.Duration.Companion.seconds
 import kotlin.time.toJavaDuration
@@ -69,6 +71,15 @@ class PokeApiServiceTest {
         assertNotNull(resp?.stats?.get(0)?.name)
         assertNotNull(resp?.stats?.get(0)?.baseStat)
 
+    }
+
+    @Test
+    fun `없는 포켓몬찾기`() {
+        assertFailsWith<PokemonNotFoundException> {
+            runBlocking {
+                service.getMyPokemon(12313123)
+            }
+        }
     }
 
 
