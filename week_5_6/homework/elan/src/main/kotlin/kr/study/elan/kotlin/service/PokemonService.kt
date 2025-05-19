@@ -1,20 +1,15 @@
-package kr.study.elan.kstudy.controller
+package kr.study.elan.kotlin.service
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.bodyToMono
 import reactor.core.publisher.Mono
 
-@RestController
-@RequestMapping("/pokemon")
-class PokemonController(
+@Service
+class PokemonService(
     private val pokemonWebClient: WebClient
 ) {
-    @GetMapping("/{id}")
-    fun delegateApi(@PathVariable id: String): Mono<Any> {
+    fun getPokemon(id: Int): Mono<Any> {
         return pokemonWebClient
             .get()
             .uri { uriBuilder ->

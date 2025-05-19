@@ -1,4 +1,4 @@
-package kr.study.elan.kstudy
+package kr.study.elan.kotlin
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
