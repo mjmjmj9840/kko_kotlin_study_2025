@@ -12,12 +12,9 @@ class UserRepository {
         users.add(user)
     }
 
-    fun findById(id: String): User {
-        val find = users.find { it.id == id }
-        if (find == null) {
-            throw UserNotFoundException("사용자를 찾을수 없습니다. [id=${id}]")
-        }
-        return find
+    fun findById(id: String): User? {
+        val user = users.find { it.id == id }
+        return user
     }
 
     fun findAll(size: Int): Collection<User> {

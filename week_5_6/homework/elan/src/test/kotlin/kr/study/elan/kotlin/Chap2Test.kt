@@ -21,6 +21,6 @@ class Chap2Test {
         mockMvc.perform(get("/hello/world"))
             .andExpect(status().isOk())
             .andExpect(header().string("Content-Type", "application/json"))
-            .andExpect(jsonPath(".hello").value("world"))
+            .andExpect(jsonPath("$.hello").value("world"))
     }
 }

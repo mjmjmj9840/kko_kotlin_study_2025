@@ -13,7 +13,7 @@ class PokemonController(
     private val pokemonService: PokemonService
 ) {
     @GetMapping("/{id}")
-    fun delegateApi(@PathVariable id: Int): Mono<Any> {
+    fun getPokemon(@PathVariable id: Int): Mono<Any> {
         return pokemonService.getPokemon(id)
     }
 }
