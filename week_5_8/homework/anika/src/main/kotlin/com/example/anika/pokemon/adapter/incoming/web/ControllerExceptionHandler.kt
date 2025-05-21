@@ -1,4 +1,4 @@
-package com.example.anika.pokemon.adapter.`in`.web
+package com.example.anika.pokemon.adapter.incoming.web
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

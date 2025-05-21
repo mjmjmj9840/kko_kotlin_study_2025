@@ -7,20 +7,20 @@ com.example.anika
 │   └── WebClientConfig.kt
 └── pokemon
 ├── adapter
-│   ├── in
+│   ├── incoming
 │   │   └── web
 │   │       └── ControllerExceptionHandler.kt
 │   │       └── GetPokemonResponse.kt
 │   │       └── PokemonController.kt    
-│   └── out
+│   └── outcoming
 │       └── web
 │           ├── PokeApiAdapter.kt
 │           └── PokeApiResponse.kt
 ├── application
 │   ├── port
-│   │   ├── in
+│   │   ├── incoming
 │   │   │   └── PokemonUseCase.kt
-│   │   └── out
+│   │   └── outcoming
 │   │       └── PokemonPort.kt
 │   └── service
 │       └── PokemonService.kt

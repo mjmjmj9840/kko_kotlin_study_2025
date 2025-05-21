@@ -1,4 +1,4 @@
-package com.example.anika.pokemon.adapter.`in`.web
+package com.example.anika.pokemon.adapter.incoming.web
 
 import com.example.anika.pokemon.domain.Pokemon
 
