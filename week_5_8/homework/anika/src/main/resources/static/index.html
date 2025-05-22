@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>포켓몬 조회</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="theme-light">
+<h1>포켓몬 정보 조회</h1>
+
+<div class="form">
+    <input id="pokemonId" placeholder="포켓몬 ID 입력"/>
+    <button onclick="getPokemon()">조회</button>
+    <select id="themeSelector" onchange="applyTheme()">
+        <option value="light">라이트</option>
+        <option value="dark">다크</option>
+        <option value="neon">네온</option>
+        <option value="rain">비</option>
+        <option value="snow">눈</option>
+    </select>
+</div>
+
+<div id="error"></div>
+<div id="result"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
