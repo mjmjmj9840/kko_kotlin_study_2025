@@ -1,0 +1,8 @@
+-- 테스트용 words 테이블 생성
+DROP TABLE IF EXISTS words;
+
+CREATE TABLE IF NOT EXISTS words (
+    text VARCHAR(255) PRIMARY KEY,
+    stage INTEGER NOT NULL DEFAULT 1,
+    answer VARCHAR(255) NOT NULL
+); 
