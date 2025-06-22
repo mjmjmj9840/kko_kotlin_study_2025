@@ -114,43 +114,17 @@ class WordService(
             loadDefaultWords()
         }
     }
-    
+
     private fun loadDefaultWords() {
         try {
-            val words = listOf(
-                "꼬들", "나비", "가방", "다람쥐", "라면",
-                "마음", "바람", "사랑", "아기", "자동차"
+            val word = Word(
+                text = "꼬들",
+                stage = 1,
+                answer = "[ㄱ,ㄱ,ㅗ,ㄷ,ㅡ,ㄹ]"
             )
-            
-            val wordEntities = words.mapNotNull { word ->
-                try {
-                    val jamos = HangulUtils.wordToSixJamos(word)
-                    val answerString = HangulUtils.jamosToCSVString(jamos)
-                    
-                    // 기본 단어도 검증
-                    val validation = HangulUtils.validateWordData(word, answerString)
-                    if (!validation.isValid) {
-                        println("기본 단어 검증 실패: $word - ${validation.message}")
-                        return@mapNotNull null
-                    }
-                    
-                    Word(
-                        text = word, 
-                        stage = 1, 
-                        answer = answerString
-                    )
-                } catch (e: Exception) {
-                    println("기본 단어 처리 실패: $word - ${e.message}")
-                    null
-                }
-            }
-            
-            if (wordEntities.isEmpty()) {
-                throw IllegalStateException("기본 단어 로딩에 실패했습니다.")
-            }
-            
-            wordRepository.saveAll(wordEntities)
-            println("${wordEntities.size}개의 기본 단어를 성공적으로 로딩했습니다.")
+
+            wordRepository.save(word)
+            println("기본 단어 ${word.text}을 성공적으로 로딩했습니다.")
         } catch (e: Exception) {
             throw IllegalStateException("기본 단어 로딩 실패", e)
         }
