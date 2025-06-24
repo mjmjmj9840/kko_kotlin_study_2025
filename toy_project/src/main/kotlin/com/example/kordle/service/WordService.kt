@@ -117,14 +117,14 @@ class WordService(
 
     private fun loadDefaultWords() {
         try {
-            val word = Word(
+            val defaultWord = Word(
                 text = "꼬들",
                 stage = 1,
                 answer = "[ㄱ,ㄱ,ㅗ,ㄷ,ㅡ,ㄹ]"
             )
 
-            wordRepository.save(word)
-            println("기본 단어 ${word.text}을 성공적으로 로딩했습니다.")
+            wordRepository.save(defaultWord)
+            println("기본 단어 ${defaultWord.text}을 성공적으로 로딩했습니다.")
         } catch (e: Exception) {
             throw IllegalStateException("기본 단어 로딩 실패", e)
         }

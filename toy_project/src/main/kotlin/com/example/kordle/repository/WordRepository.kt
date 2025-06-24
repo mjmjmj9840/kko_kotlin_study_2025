@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository
 @Repository
 interface WordRepository : JpaRepository<Word, String> {
     
-    // JPQL 쿼리 - Word는 엔티티명, 실제 테이블은 'words'
+    // JPQL 쿼리 -  테이블 이름(words)이 아닌 엔티티 이름(Word)를 기준으로 작성
     @Query("SELECT w FROM Word w")
     fun findAllowedWords(): List<Word>
     
@@ -27,8 +27,4 @@ interface WordRepository : JpaRepository<Word, String> {
     // 최대 stage 조회
     @Query("SELECT MAX(w.stage) FROM Word w")
     fun findMaxStage(): Int?
-    
-    // stage 범위 내의 단어 개수 조회
-    @Query("SELECT COUNT(w) FROM Word w WHERE w.stage <= :maxStage")
-    fun countByStageUpTo(maxStage: Int): Long
 }
